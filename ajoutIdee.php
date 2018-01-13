@@ -20,6 +20,6 @@ $crudIdee=new crudIdee();
 
 $crudIdee->ajouter($Idee);
 
-echo json_encode($Idee);
+
 
 ?>

@@ -12,6 +12,6 @@ $crudIdee=new crudIdee();
 
 $crudIdee->supprimer((int)$_POST['id_to_delete']);
 
-echo json_encode($id);
+header('location: ../Idees.php');
 
 ?>
