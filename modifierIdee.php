@@ -8,21 +8,21 @@
 
 include "crudIdee.php";
 
-//$Idee=new Idee();
-//$Idee->setId($_POST['id']);
-//$Idee->setTitre($_POST['titre']);
-//$Idee->setDomaine($_POST['domaine']);
-//$Idee->setDecription($_POST['description']);
-//$Idee->setDateAjout($_POST['dateAjout']);
-//$Idee->setPrix($_POST['prix']);
-//$Idee->setPathImg($_POST['pathImg']);
-//$Idee->setPathDoc($_POST['pathDoc']);
-//
-//$crudIdee=new crudIdee();
-//$crudIdee->modifier($Idee);
-//
+$Idee=new Idee();
+
+$Idee->setId($_POST['id_to_edit']);
+$Idee->setTitre($_POST['idee_title']);
+$Idee->setDomaine($_POST['domaine_to_edit']);
+$Idee->setDecription($_POST['description']);
+$Idee->setDateAjout($_POST['dateAjout']);
+$Idee->setPrix($_POST['prix_to_edit']);
+$Idee->setPathImg("famma mochkel");//to fix
+$Idee->setPathDoc("famma mochkel");
+
+$crudIdee=new crudIdee();
+
+$crudIdee->modifier($Idee);
+
 //echo json_encode($Idee);
-
-header('location: ../IdeeEdit.php');
-
+header('location: ../Idees.php');
 ?>

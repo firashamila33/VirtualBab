@@ -43,7 +43,7 @@ class crudIdee
         $titre = $Idee->getTitre();
         $domaine=$Idee->getDomaine();
         $description=$Idee->getDecription();
-        $dateAjout=$Idee->getDateAjout();
+        //$dateAjout=$Idee->getDateAjout();
         $prix=$Idee->getPrix();
         $pathDoc=$Idee->getPathDoc();
         $pathImg=$Idee->getPathImg();
@@ -53,10 +53,10 @@ class crudIdee
         $c = new configuration();
         $conn = $c->getConnexion();
 
-        $req = "update bab.idee set titre=?,domaine=?,description=? ,date_ajout=?,prix=?,path_doc=?,path_img=?,etat=? where id=?";
+        $req = "update bab.idee set titre=?,domaine=?,description=? ,prix=?,path_doc=?,path_img=?,etat=? where id=?";
         $q = $conn->prepare($req);
 
-        $q->execute(array($titre,$domaine,$description,$dateAjout,$prix,$pathDoc,$pathImg,$etat,$id));
+        $q->execute(array($titre,$domaine,$description,$prix,$pathDoc,$pathImg,$etat,$id));
     }
 
     function rechercher($ref)
