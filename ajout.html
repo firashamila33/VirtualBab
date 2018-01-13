@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form method="post" id="formID">
+    <input type="text" placeholder="titre" name="titre" id="titre"><br>
+    <input type="text" placeholder="domaine" name="domaine" id="domaine"><br>
+    <input type="text" placeholder="description" name="description" id="description"><br>
+    <input type="date" placeholder="dateAjout" name="dateAjout" id="dateAjout"><br>
+    <input type="text" placeholder="prix" name="prix" id="prix"><br>
+    <input type="file" placeholder="pathDoc" name="pathDoc" id="pathDoc" accept=".pdf"><br>
+    <input type="file" placeholder="pathImg" name="pathImg" id="pathImg" accept=".jpg , .png"><br>
+    <input type="text" placeholder="etat" name="etat" id="etat"><br>
+    <input type="submit" value="add" id="csonfirm_btn">
+</form>
+<script src="jquery-3.2.1.min.js"></script>
+<script>
+    $("#formID").on("submit", function(event) {
+        event.preventDefault();
+        $.ajax({
+            type: "POST",
+            url: "ajoutIdee.php",
+            data: $(this).serialize(),
+            success: function(data) {
+               console.log("Sa7itk");
+            },
+        });
+    });
+</script>
+</body>
+</html>
