@@ -22,7 +22,7 @@ class crudIdee
         $prix=$Idee->getPrix();
         $pathDoc=$Idee->getPathDoc();
         $pathImg=$Idee->getPathImg();
-        $etat=$Idee->getEtat();
+        $etat="NON";
         $req="INSERT INTO bab.idee(`user_id`, `titre`, `domaine`, `description`, `date_ajout`, `prix`, `path_doc`, `path_img`, `etat`) VALUES (?,?,?,?,?,?,?,?,?)";
         $q = $conn->prepare($req);
         $q->execute(array($user_id,$titre,$domaine,$description,$dateAjout,$prix,$pathDoc,$pathImg,$etat));
